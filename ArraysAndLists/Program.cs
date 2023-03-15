@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 
 namespace ArraysAndLists
 {
@@ -10,10 +12,15 @@ namespace ArraysAndLists
 
             // Create an int Array and populate numbers 1-10
 
+            int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
             /* Create two Lists of type int.
              * Name one List "evens"
              * Name the other List "odds"
              */
+
+            List<int> evens = new List<int>();
+            List<int> odds = new List<int>();
 
             /* Using either a foreach or for loop,
              * nest an if statement to check to see
@@ -22,11 +29,62 @@ namespace ArraysAndLists
              * or the odds List
              */
 
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] % 2 == 0)
+                {
+                    evens.Add(nums[i]);
+                }
+                else
+                {
+                    odds.Add(nums[i]);
+                }
+            }
+
+
+
+
             /* Now using foreach or for loops,
              * display each List of even and odd numbers
              *
              * Try to be creative in your display
              */
+            Console.WriteLine("<><><><><><><><><><><><><><><><><><><><><><><><><>");
+            
+            Console.Write($"Hello! Welcome to the Evens and Odds show! \nToday I will be displaying two lists of numbers. \nOne list will be the \"Evens\" list, and the other " +
+                $"list will be the \"Odds\" list! \nFirst we will begin with the Evens list. \nNOTE: We will only perform lists for numbers from 1-10." +
+                $"\nPlease hit ENTER to begin!");
+            
+            Console.ReadLine();
+            
+            Console.WriteLine("=======================================");
+            
+            foreach (int i in evens)
+            {
+                Console.WriteLine(i);
+            }
+            
+            Console.WriteLine("=======================================");
+            
+            Console.Write($"Holy smokes that was fun! \nAfter that much excitement I think I am ready for the Odds list! \nWhen you are ready, please hit ENTER to begin.");
+
+            Console.ReadLine();
+
+            Console.WriteLine("=======================================");
+
+            foreach (int i in odds)
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine("=======================================");
+
+            Console.WriteLine("Thank you for coming to the Evens and Odds show!\nI hope you had as much fun as I did!\nI look forward to seeing you again soon!");
+            Console.WriteLine("<><><><><><><><><><><><><><><><><><><><><><><><><>");
+
+
+
+
         }
     }
 }
